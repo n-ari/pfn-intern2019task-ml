@@ -1,0 +1,169 @@
+2-layer MLPの活性化関数をsigmoid/reluで変えて試したログです
+
+## relu + relu
+$ time ./a.out
+epoch(1): test avg loss = 0.69198, test avg rate = 0.46200 / train avg loss = 0.67467, train avg rate = 0.51533
+epoch(10): test avg loss = 0.67629, test avg rate = 0.58200 / train avg loss = 0.64899, train avg rate = 0.63267
+epoch(20): test avg loss = 0.65478, test avg rate = 0.61000 / train avg loss = 0.63651, train avg rate = 0.65800
+epoch(30): test avg loss = 0.66288, test avg rate = 0.60400 / train avg loss = 0.62845, train avg rate = 0.65600
+epoch(40): test avg loss = 0.65069, test avg rate = 0.61000 / train avg loss = 0.62425, train avg rate = 0.65800
+epoch(50): test avg loss = 0.66150, test avg rate = 0.60600 / train avg loss = 0.62343, train avg rate = 0.65800
+epoch(60): test avg loss = 0.64988, test avg rate = 0.60800 / train avg loss = 0.62169, train avg rate = 0.66067
+epoch(70): test avg loss = 0.65124, test avg rate = 0.61000 / train avg loss = 0.62090, train avg rate = 0.65800
+epoch(80): test avg loss = 0.64863, test avg rate = 0.60400 / train avg loss = 0.62183, train avg rate = 0.65600
+epoch(90): test avg loss = 0.65519, test avg rate = 0.61000 / train avg loss = 0.62034, train avg rate = 0.65800
+epoch(100): test avg loss = 0.65129, test avg rate = 0.60800 / train avg loss = 0.62055, train avg rate = 0.66067
+epoch(110): test avg loss = 0.66007, test avg rate = 0.61400 / train avg loss = 0.62096, train avg rate = 0.66267
+epoch(120): test avg loss = 0.64842, test avg rate = 0.60400 / train avg loss = 0.62222, train avg rate = 0.65600
+epoch(130): test avg loss = 0.65386, test avg rate = 0.61000 / train avg loss = 0.62013, train avg rate = 0.65800
+epoch(140): test avg loss = 0.65366, test avg rate = 0.61000 / train avg loss = 0.62014, train avg rate = 0.65800
+epoch(150): test avg loss = 0.64965, test avg rate = 0.60400 / train avg loss = 0.62128, train avg rate = 0.65600
+epoch(160): test avg loss = 0.66075, test avg rate = 0.61400 / train avg loss = 0.62099, train avg rate = 0.66267
+epoch(170): test avg loss = 0.67654, test avg rate = 0.60600 / train avg loss = 0.62705, train avg rate = 0.65800
+epoch(180): test avg loss = 0.65090, test avg rate = 0.60800 / train avg loss = 0.62068, train avg rate = 0.66067
+epoch(190): test avg loss = 0.64993, test avg rate = 0.60400 / train avg loss = 0.62113, train avg rate = 0.65600
+epoch(200): test avg loss = 0.65206, test avg rate = 0.60800 / train avg loss = 0.62034, train avg rate = 0.66067
+
+real    1m9.116s
+user    12m15.828s
+sys     0m1.484s
+
+## sigmoid + sigmoid
+$ time ./a.out
+epoch(1): test avg loss = 0.69049, test avg rate = 0.55400 / train avg loss = 0.68185, train avg rate = 0.57600
+epoch(10): test avg loss = 0.67431, test avg rate = 0.54000 / train avg loss = 0.68040, train avg rate = 0.53333
+epoch(20): test avg loss = 0.67075, test avg rate = 0.59400 / train avg loss = 0.66184, train avg rate = 0.62600
+epoch(30): test avg loss = 0.67025, test avg rate = 0.59800 / train avg loss = 0.65312, train avg rate = 0.62667
+epoch(40): test avg loss = 0.65652, test avg rate = 0.61600 / train avg loss = 0.64159, train avg rate = 0.65000
+epoch(50): test avg loss = 0.66722, test avg rate = 0.60400 / train avg loss = 0.63617, train avg rate = 0.63800
+epoch(60): test avg loss = 0.64516, test avg rate = 0.64400 / train avg loss = 0.62012, train avg rate = 0.66000
+epoch(70): test avg loss = 0.63834, test avg rate = 0.64000 / train avg loss = 0.61106, train avg rate = 0.67867
+epoch(80): test avg loss = 0.62015, test avg rate = 0.64200 / train avg loss = 0.59934, train avg rate = 0.68933
+epoch(90): test avg loss = 0.59564, test avg rate = 0.67000 / train avg loss = 0.58770, train avg rate = 0.67467
+epoch(100): test avg loss = 0.56868, test avg rate = 0.69000 / train avg loss = 0.53968, train avg rate = 0.73867
+epoch(110): test avg loss = 0.54639, test avg rate = 0.71400 / train avg loss = 0.51188, train avg rate = 0.75333
+epoch(120): test avg loss = 0.55040, test avg rate = 0.70000 / train avg loss = 0.50523, train avg rate = 0.75133
+epoch(130): test avg loss = 0.48694, test avg rate = 0.74200 / train avg loss = 0.46004, train avg rate = 0.77333
+epoch(140): test avg loss = 0.47481, test avg rate = 0.74600 / train avg loss = 0.44463, train avg rate = 0.78867
+epoch(150): test avg loss = 0.45603, test avg rate = 0.77200 / train avg loss = 0.43410, train avg rate = 0.78800
+epoch(160): test avg loss = 0.44945, test avg rate = 0.77600 / train avg loss = 0.42717, train avg rate = 0.79400
+epoch(170): test avg loss = 0.44926, test avg rate = 0.77600 / train avg loss = 0.43134, train avg rate = 0.78933
+epoch(180): test avg loss = 0.44393, test avg rate = 0.78400 / train avg loss = 0.41937, train avg rate = 0.79667
+epoch(190): test avg loss = 0.44203, test avg rate = 0.78400 / train avg loss = 0.41757, train avg rate = 0.80000
+epoch(200): test avg loss = 0.44045, test avg rate = 0.78800 / train avg loss = 0.41628, train avg rate = 0.80067
+
+real    1m48.506s
+user    19m31.828s
+sys     0m1.547s
+
+## sigmoid + relu
+$ time ./a.out
+epoch(1): test avg loss = 0.68917, test avg rate = 0.48200 / train avg loss = 0.67811, train avg rate = 0.52333
+epoch(10): test avg loss = 0.69178, test avg rate = 0.59600 / train avg loss = 0.64320, train avg rate = 0.64600
+epoch(20): test avg loss = 0.63482, test avg rate = 0.63000 / train avg loss = 0.61511, train avg rate = 0.67000
+epoch(30): test avg loss = 0.58359, test avg rate = 0.69800 / train avg loss = 0.54582, train avg rate = 0.73933
+epoch(40): test avg loss = 0.43210, test avg rate = 0.81200 / train avg loss = 0.41393, train avg rate = 0.82200
+epoch(50): test avg loss = 0.40330, test avg rate = 0.82800 / train avg loss = 0.39362, train avg rate = 0.82333
+epoch(60): test avg loss = 0.38404, test avg rate = 0.84000 / train avg loss = 0.37478, train avg rate = 0.84067
+epoch(70): test avg loss = 0.38456, test avg rate = 0.83000 / train avg loss = 0.37222, train avg rate = 0.84067
+epoch(80): test avg loss = 0.37512, test avg rate = 0.83000 / train avg loss = 0.36837, train avg rate = 0.84000
+epoch(90): test avg loss = 0.37457, test avg rate = 0.83600 / train avg loss = 0.36848, train avg rate = 0.83600
+epoch(100): test avg loss = 0.37182, test avg rate = 0.84600 / train avg loss = 0.37013, train avg rate = 0.83733
+epoch(110): test avg loss = 0.36967, test avg rate = 0.83800 / train avg loss = 0.36385, train avg rate = 0.83800
+epoch(120): test avg loss = 0.37362, test avg rate = 0.82400 / train avg loss = 0.36119, train avg rate = 0.84333
+epoch(130): test avg loss = 0.37479, test avg rate = 0.83400 / train avg loss = 0.36297, train avg rate = 0.84467
+epoch(140): test avg loss = 0.36795, test avg rate = 0.83600 / train avg loss = 0.35636, train avg rate = 0.84733
+epoch(150): test avg loss = 0.37420, test avg rate = 0.83200 / train avg loss = 0.35991, train avg rate = 0.84533
+epoch(160): test avg loss = 0.36429, test avg rate = 0.84200 / train avg loss = 0.35597, train avg rate = 0.84533
+epoch(170): test avg loss = 0.37020, test avg rate = 0.83400 / train avg loss = 0.35934, train avg rate = 0.84667
+epoch(180): test avg loss = 0.35810, test avg rate = 0.85000 / train avg loss = 0.35173, train avg rate = 0.85200
+epoch(190): test avg loss = 0.36610, test avg rate = 0.83000 / train avg loss = 0.35788, train avg rate = 0.84467
+epoch(200): test avg loss = 0.35699, test avg rate = 0.84800 / train avg loss = 0.35088, train avg rate = 0.85000
+
+real    1m25.127s
+user    15m28.141s
+sys     0m1.281s
+
+## relu + sigmoid
+$ time ./a.out
+epoch(1): test avg loss = 0.67618, test avg rate = 0.57800 / train avg loss = 0.66452, train avg rate = 0.61000
+epoch(10): test avg loss = 0.63441, test avg rate = 0.64200 / train avg loss = 0.60794, train avg rate = 0.67867
+epoch(20): test avg loss = 0.57364, test avg rate = 0.73000 / train avg loss = 0.52629, train avg rate = 0.76867
+epoch(30): test avg loss = 0.49869, test avg rate = 0.76800 / train avg loss = 0.46683, train avg rate = 0.78600
+epoch(40): test avg loss = 0.48488, test avg rate = 0.76800 / train avg loss = 0.45742, train avg rate = 0.78533
+epoch(50): test avg loss = 0.47801, test avg rate = 0.76600 / train avg loss = 0.45158, train avg rate = 0.78533
+epoch(60): test avg loss = 0.46849, test avg rate = 0.77000 / train avg loss = 0.44524, train avg rate = 0.78533
+epoch(70): test avg loss = 0.46096, test avg rate = 0.76600 / train avg loss = 0.43284, train avg rate = 0.79333
+epoch(80): test avg loss = 0.45288, test avg rate = 0.78200 / train avg loss = 0.42311, train avg rate = 0.79933
+epoch(90): test avg loss = 0.44853, test avg rate = 0.78000 / train avg loss = 0.41769, train avg rate = 0.80067
+epoch(100): test avg loss = 0.45643, test avg rate = 0.76800 / train avg loss = 0.41949, train avg rate = 0.79933
+epoch(110): test avg loss = 0.45898, test avg rate = 0.76400 / train avg loss = 0.42050, train avg rate = 0.79933
+epoch(120): test avg loss = 0.46421, test avg rate = 0.76200 / train avg loss = 0.42448, train avg rate = 0.79933
+epoch(130): test avg loss = 0.43936, test avg rate = 0.79600 / train avg loss = 0.41222, train avg rate = 0.80800
+epoch(140): test avg loss = 0.44569, test avg rate = 0.77400 / train avg loss = 0.41243, train avg rate = 0.80600
+epoch(150): test avg loss = 0.43622, test avg rate = 0.79400 / train avg loss = 0.41267, train avg rate = 0.81067
+epoch(160): test avg loss = 0.44181, test avg rate = 0.78600 / train avg loss = 0.41016, train avg rate = 0.80800
+epoch(170): test avg loss = 0.43480, test avg rate = 0.79600 / train avg loss = 0.40780, train avg rate = 0.81333
+epoch(180): test avg loss = 0.43376, test avg rate = 0.80400 / train avg loss = 0.40825, train avg rate = 0.81133
+epoch(190): test avg loss = 0.43771, test avg rate = 0.79400 / train avg loss = 0.40741, train avg rate = 0.81067
+epoch(200): test avg loss = 0.43952, test avg rate = 0.78200 / train avg loss = 0.40820, train avg rate = 0.81400
+
+real    1m26.683s
+user    15m45.391s
+sys     0m1.313s
+
+## sigmoid
+$ time ./a.out
+epoch(1): test avg loss = 0.65724, test avg rate = 0.61200 / train avg loss = 0.64052, train avg rate = 0.64600
+epoch(10): test avg loss = 0.64904, test avg rate = 0.63200 / train avg loss = 0.61268, train avg rate = 0.67733
+epoch(20): test avg loss = 0.60629, test avg rate = 0.67600 / train avg loss = 0.57333, train avg rate = 0.71400
+epoch(30): test avg loss = 0.55612, test avg rate = 0.70200 / train avg loss = 0.53289, train avg rate = 0.74200
+epoch(40): test avg loss = 0.52852, test avg rate = 0.72400 / train avg loss = 0.49631, train avg rate = 0.76133
+epoch(50): test avg loss = 0.48342, test avg rate = 0.75000 / train avg loss = 0.45905, train avg rate = 0.77867
+epoch(60): test avg loss = 0.45994, test avg rate = 0.76800 / train avg loss = 0.43862, train avg rate = 0.79000
+epoch(70): test avg loss = 0.45157, test avg rate = 0.75800 / train avg loss = 0.42614, train avg rate = 0.79867
+epoch(80): test avg loss = 0.44595, test avg rate = 0.77600 / train avg loss = 0.41979, train avg rate = 0.80200
+epoch(90): test avg loss = 0.45696, test avg rate = 0.76600 / train avg loss = 0.42530, train avg rate = 0.80533
+epoch(100): test avg loss = 0.43171, test avg rate = 0.78600 / train avg loss = 0.41217, train avg rate = 0.80533
+epoch(110): test avg loss = 0.43639, test avg rate = 0.79000 / train avg loss = 0.41013, train avg rate = 0.81133
+epoch(120): test avg loss = 0.42637, test avg rate = 0.79800 / train avg loss = 0.40398, train avg rate = 0.81400
+epoch(130): test avg loss = 0.42421, test avg rate = 0.80200 / train avg loss = 0.40173, train avg rate = 0.81667
+epoch(140): test avg loss = 0.41883, test avg rate = 0.80200 / train avg loss = 0.39864, train avg rate = 0.81600
+epoch(150): test avg loss = 0.41805, test avg rate = 0.80800 / train avg loss = 0.39700, train avg rate = 0.82267
+epoch(160): test avg loss = 0.41262, test avg rate = 0.80000 / train avg loss = 0.39750, train avg rate = 0.81600
+epoch(170): test avg loss = 0.41140, test avg rate = 0.80400 / train avg loss = 0.39285, train avg rate = 0.82533
+epoch(180): test avg loss = 0.40979, test avg rate = 0.81000 / train avg loss = 0.39628, train avg rate = 0.81600
+epoch(190): test avg loss = 0.41301, test avg rate = 0.79800 / train avg loss = 0.40282, train avg rate = 0.80800
+epoch(200): test avg loss = 0.40974, test avg rate = 0.80000 / train avg loss = 0.39034, train avg rate = 0.83000
+
+real    1m5.124s
+user    12m8.531s
+sys     0m1.063s
+
+## relu
+$ time ./a.out
+epoch(1): test avg loss = 1.51879, test avg rate = 0.46000 / train avg loss = 1.33028, train avg rate = 0.50733
+epoch(10): test avg loss = 0.68405, test avg rate = 0.58200 / train avg loss = 0.65219, train avg rate = 0.61133
+epoch(20): test avg loss = 0.65445, test avg rate = 0.59000 / train avg loss = 0.64253, train avg rate = 0.65200
+epoch(30): test avg loss = 0.69426, test avg rate = 0.59200 / train avg loss = 0.64377, train avg rate = 0.64533
+epoch(40): test avg loss = 0.65532, test avg rate = 0.61000 / train avg loss = 0.62403, train avg rate = 0.66600
+epoch(50): test avg loss = 0.66546, test avg rate = 0.60600 / train avg loss = 0.62488, train avg rate = 0.65800
+epoch(60): test avg loss = 0.65765, test avg rate = 0.61000 / train avg loss = 0.62162, train avg rate = 0.66600
+epoch(70): test avg loss = 0.64851, test avg rate = 0.60400 / train avg loss = 0.62203, train avg rate = 0.65600
+epoch(80): test avg loss = 0.65255, test avg rate = 0.61000 / train avg loss = 0.62049, train avg rate = 0.65800
+epoch(90): test avg loss = 0.65254, test avg rate = 0.61000 / train avg loss = 0.62038, train avg rate = 0.65800
+epoch(100): test avg loss = 0.65554, test avg rate = 0.61000 / train avg loss = 0.62029, train avg rate = 0.65800
+epoch(110): test avg loss = 0.65675, test avg rate = 0.61400 / train avg loss = 0.62036, train avg rate = 0.66267
+epoch(120): test avg loss = 0.64828, test avg rate = 0.60400 / train avg loss = 0.62231, train avg rate = 0.65600
+epoch(130): test avg loss = 0.65074, test avg rate = 0.60800 / train avg loss = 0.62070, train avg rate = 0.66067
+epoch(140): test avg loss = 0.65571, test avg rate = 0.61000 / train avg loss = 0.62021, train avg rate = 0.65800
+epoch(150): test avg loss = 0.66509, test avg rate = 0.61000 / train avg loss = 0.62241, train avg rate = 0.66600
+epoch(160): test avg loss = 0.66162, test avg rate = 0.61000 / train avg loss = 0.62133, train avg rate = 0.66600
+epoch(170): test avg loss = 0.65057, test avg rate = 0.60800 / train avg loss = 0.62076, train avg rate = 0.66067
+epoch(180): test avg loss = 0.65349, test avg rate = 0.61000 / train avg loss = 0.62020, train avg rate = 0.65800
+epoch(190): test avg loss = 0.65903, test avg rate = 0.61400 / train avg loss = 0.62079, train avg rate = 0.66267
+epoch(200): test avg loss = 0.66647, test avg rate = 0.61000 / train avg loss = 0.62308, train avg rate = 0.66600
+
+real    0m45.623s
+user    8m35.234s
+sys     0m0.859s
